@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>First page</title>
+</head>
+<body>
+    
+<h1 id="customer">Add new customer</h1>
+
+<div id="new-customer-data" class="new-customer">
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input class="form" type="text" id="fname"  placeholder="Enter your first name"><br>
+        
+        <label  for="lastname">Last name:</label><br>
+        <input class="form" type="text" id="lastname"  placeholder="Enter your last name"><br>
+        
+        <label class="form" for="email">Enter your email:</label><br>
+        <input class="form" id="email" type="email"  name="email" placeholder="Enter your email"><br>
+        
+        <label class="form" id="mobilenum">Enter your mobile number:</label><br>
+        <input class="form" id="mnum" type="text" name="mnum" placeholder="Enter your mobile number"><br>
+        <label class="form" for="mnum">Enter your current lcation:</label><br>
+        <input class="form" id="location" type="text"   placeholder="Enter your current location"><br>
+        <br>
+        
+        <button type="button" onclick="addNewRow()">Saved Info of new customer</button>
+    </form>
+</div>
+<h1>Customer Record</h1>
+<div id="customer-record">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact Number</th>
+                <th>Location</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="customer-list">
+            <tr>
+                <td>Rehan</td>
+                <td>abc@gmail.com</td>
+                <td>1234567</td>
+                <td>Sialkot</td>
+                <td  bgcolor="pink" text="white" ><button id="button" onclick="deleteRow(this)">delete</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="function.js"></script>
+</body>
+</html>
