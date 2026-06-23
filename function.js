@@ -45,6 +45,6 @@ if (code === "123") {
     
     return;
 } else {
-    alert("Incorrect password! You cannot delete this record.");
+    alert("Incorrect passord! You cannot delete this record.");
 }
 }
