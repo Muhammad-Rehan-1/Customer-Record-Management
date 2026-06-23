@@ -33,18 +33,33 @@ document.getElementById("location").value = "";
 }
 
 function deleteRow(button) {
+    // 1. Generate a random 4-digit OTP
+    let generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
 
-let code = prompt("Enter the deletion code to remove this record:");
+   let templateParams = {
+        email: 'rehan2005asif@gmail.com', 
+        otp_code: generatedOtp,          
+        time: '15 minutes'                
+    };
 
-if (code === "123") {
-    
-    let row = button.parentElement.parentElement;
-    row.remove();
-    alert("Record deleted successfully.");
-} else if (code === null) {
-    
-    return;
-} else {
-    alert("Incorrect passord! You cannot delete this record.");
-}
+    // 3. Send the real email
+    emailjs.send('service_jrpk53y', 'template_a61bpvm', templateParams)
+        .then(function(response) {
+            console.log('SUCCESS!', response.status, response.text);
+            
+            let userOtp = prompt("A real OTP has been sent to your email! Enter it here to confirm deletion:");
+
+            if (userOtp === generatedOtp) {
+                let row = button.parentElement.parentElement;
+                row.remove();
+                alert("Record deleted successfully.");
+            } else if (userOtp === null) {
+                return;
+            } else {
+                alert("Incorrect OTP! Row not deleted.");
+            }
+        }, function(error) {
+            console.log('FAILED...', error);
+            alert("Failed to send OTP email. Please try again.");
+        });
 }
