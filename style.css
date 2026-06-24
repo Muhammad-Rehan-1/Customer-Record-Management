@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. Design Tokens & Global Reset
-   ========================================================================== */
+
 :root {
     --primary: #005380;
     --primary-hover: #003e61;
@@ -34,9 +32,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================================================
-   2. Intelligent Grid Layout (Desktop & PC Support)
-   ========================================================================== */
 @media (min-width: 1024px) {
     body {
         display: grid;
@@ -44,7 +39,7 @@ body {
         gap: 20px 40px; 
         max-width: 1300px;
         margin: 0 auto;
-        padding: 40px 24px; /* Roomier padding for large screens */
+        padding: 40px 24px; 
         align-items: start;
     }
 
@@ -54,12 +49,10 @@ body {
     #customer-record { grid-column: 2; grid-row: 2; }
 }
 
-/* ==========================================================================
-   3. Enhanced Typography & Top Header Section
-   ========================================================================== */
+
 h1 {
     color: var(--primary);
-    font-size: 1.4rem; /* Slightly smaller for mobile scaling */
+    font-size: 1.4rem; 
     font-weight: 700;
     letter-spacing: -0.01em;
     margin-top: 15px;
@@ -100,15 +93,12 @@ h1::before {
     margin-right: 10px;
 }
 
-/* ==========================================================================
-   4. Form Card & Input Elements
-   ========================================================================== */
 #new-customer-data {
     background-color: var(--bg-card);
     border: 1px solid rgba(0, 83, 128, 0.05);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    padding: 20px; /* Reduced mobile padding */
+    padding: 20px; 
     width: 100%;
     margin-top: 15px; 
     margin-bottom: 30px;
@@ -160,9 +150,6 @@ input.form:focus {
     display: none;
 }
 
-/* ==========================================================================
-   5. Buttons
-   ========================================================================== */
 button {
     font-family: inherit;
     font-weight: 600;
@@ -193,7 +180,7 @@ button {
 #customer-record button {
     background-color: rgba(239, 68, 68, 0.08);
     color: var(--danger);
-    padding: 6px 12px; /* Increased clickable touch target area for mobile screens */
+    padding: 6px 12px; 
     font-size: 0.85rem;
     width: auto;
     border: 1px solid rgba(239, 68, 68, 0.2);
@@ -210,9 +197,6 @@ button:active {
     transform: scale(0.98);
 }
 
-/* ==========================================================================
-   6. Table Framework Layout
-   ========================================================================== */
 #customer-record {
     background-color: var(--bg-card);
     border: 1px solid var(--border);
@@ -221,7 +205,6 @@ button:active {
     margin-top: 15px; 
     margin-bottom: 30px;
     
-    /* Crucial fix: Ensures wide data structures don't break mobile layout grid */
     overflow-x: auto; 
     -webkit-overflow-scrolling: touch; 
 }
@@ -229,11 +212,11 @@ button:active {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 500px; /* Ensures the table elements maintain clear structure even on tight mobile screens */
+    min-width: 500px; 
 }
 
 th, td {
-    padding: 12px 16px; /* Slightly compacted mobile padding */
+    padding: 12px 16px; 
     text-align: left;
     border-bottom: 1px solid var(--border);
 }

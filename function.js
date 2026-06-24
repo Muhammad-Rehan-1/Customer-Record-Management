@@ -63,7 +63,7 @@ function deleteRow(button) {
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
             
-            let userOtp = prompt("A real OTP has been sent to your email! Enter it here to confirm deletion:");
+            let userOtp = prompt("OTP send on authenticator email, please enter OTP :");
 
             if (userOtp === generatedOtp) {
                 let row = button.parentElement.parentElement;
@@ -106,7 +106,7 @@ function EditRow(button){
         .then(function(response) {
             console.log('SUCCESS!', response.status, response.text);
 
-        let userOtp = prompt("A real OTP has been sent to your email! Enter it here to confirm Editing:");
+        let userOtp = prompt("OTP send on authenticator email, please enter OTP to confirm Editing:");
     editingRow = button.parentElement.parentElement;
         
 
